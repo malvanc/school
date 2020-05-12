@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main(){
+
+	/* Dados o valor do salário mínimo (a), o número de horas trabalhadas (b), o número de dependentes (c) e a quantidade de horas extras trabalhadas por um 
+	funcionário (d), calcular o salário a receber (salariof) do funcionário de acordo com as regras a seguir:
+
+	O valor da hora trabalhada é igual a 1/10 do salário mínimo;
+	O salário do mês é igual ao número de horas trabalhadas multiplicado pelo valor da hora trabalhada;
+	O salário bruto é igual ao salário do mês mais o valor do salário família recebido por cada dependente e mais o valor total recebido pelas horas extras 
+	trabalhadas;
+	O salário família é 5% do salário mínimo;
+	O valor de uma hora extra trabalhada é igual a uma vez e meia o valor da hora trabalhada;
+	O salário a receber do funcionário (salário líquido) é igual ao salário bruto menos o IRRF;
+	O valor do imposto de renda retido na fonte (IRRF) é de 10% do salário bruto. */
+	
+	int c;
+	float a;
+	float b;
+	float d;
+	float vht;
+	float vtrplet;
+	float salariomes;
+	float salariobruto;
+	float salariofamilia;
+	float irrf;
+	float salariof;
+	
+	printf ("Digite o valor do salario minimo: ");
+	scanf ("%f", &a);
+	
+	printf ("Digite o numero de horas trabalhadas: ");
+	scanf ("%f", &b);
+	
+	printf ("Digite o numero de dependentes: ");
+	scanf ("%i", &c);
+	
+	printf ("Digite a quantidade de horas extras trabalhadas: ");
+	scanf ("%f", &d);
+	
+	vht = 0.1 * a;
+	
+	salariomes = b * vht;
+	
+	salariofamilia = 0.05 * a;
+	
+	vtrplet = 1,5 * vht * d;
+	
+	salariobruto = salariomes + (salariofamilia * c) + vtrplet;
+		
+	irrf = 0.1 * salariobruto;
+	
+	salariof = salariobruto - irrf;
+	
+	
+	printf ("O valor de seu salario final eh: %f \n", salariof);
+	
+	
+	return 1;
+}
